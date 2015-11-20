@@ -6,21 +6,29 @@
     .config(routes);
 
   function routes($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/articles/content/0");
+    $urlRouterProvider.otherwise("/articles/0/main");
 
     $stateProvider
       .state('articles', {
+        abstract: true,
         url: '/articles',
-        templateUrl: 'articles/views/articlesMenu.html',
-        controller: 'ArticlesMenuController',
-        controllerAs: 'vm'
+        templateUrl: 'articles/views/Articles.html',
       })
-      .state('articles.content', {
-        url: '/content/:id',
-        templateUrl: 'articles/views/articleContent.html',
-        controller: 'ArticleContentController',
-        controllerAs: 'vm'
-      });
+      .state('articles.list', {
+        url: '/:id/:name',
+        views: {
+          menu: {
+            templateUrl: 'articles/views/ArticlesMenu.html',
+            controller: 'ArticlesMenuController',
+            controllerAs: 'vm'
+          },
+          content: {
+            templateUrl: 'articles/views/ArticleContent.html',
+            controller: 'ArticleContentController',
+            controllerAs: 'vm'
+          }
+        }
+      })
   }
 
 })();

@@ -1,9 +1,11 @@
-
-.articles-menu {
-  background: cornflowerblue;
-  padding: $pdg-base;
+.articles-menu-container {
+  float: left;
+  width: 200px;
 }
 
-.articles-container {
-
+.articles-content-container {
+  margin-left: 220px;
 }
+
+@import "articles-menu";
+@import "articles-content";

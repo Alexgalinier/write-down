@@ -5,10 +5,12 @@
     .module('wrtd.articles')
     .controller('ArticleContentController', ArticleContentController);
 
-  function ArticleContentController(ArticlesService, $stateParams) {
+  function ArticleContentController($scope, $stateParams, $interval, ArticlesService) {
     var vm = this;
 
-    vm.article = '';
+    vm.article = null;
+    vm.articleHasChanged = false;
+    vm.articleNewContent = '';
 
     init();
 
@@ -23,9 +25,25 @@
      * --------------------- */
 
     function init() {
-      getArticle().then(function() {
-        console.log('Article filled');
+      var timer = $interval(function() {
+        console.log('check save');
+        if (vm.articleHasChanged) {
+          vm.articleHasChanged = false;
+
+          vm.article.content = vm.articleNewContent;
+
+          ArticlesService.save(vm.article).then(function() {
+            console.log('saved');
+          });
+        }
+      }, 1000);
+
+      $scope.$on("$destroy", function() {
+        console.log('Article destroyed');
+        if (timer) $interval.cancel(timer);
       });
+
+      getArticle();
     }
 
     function getArticle() {

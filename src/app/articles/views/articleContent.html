@@ -1,4 +1,5 @@
-<article>
+<article class="article">
+  <span class="article-status-light" ng-class="{saved: !vm.articleHasChanged, pending: vm.articleHasChanged}"></span>
   <h1>{{:: vm.article.name }}</h1>
-  <div ng-bind-html="vm.article.content | toTrusted"></div>
+  <div class="articles-content" contenteditable="true" ng-bind-html="vm.article.content | toTrusted" article-content-change></div>
 </article>

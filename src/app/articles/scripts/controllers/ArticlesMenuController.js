@@ -18,14 +18,13 @@
 
     // ...
 
+
     /* ---------------------
      * Privates Functions
      * --------------------- */
 
     function init() {
-      getArticles().then(function() {
-        console.log('Articles filled');
-      });
+      getArticles();
     }
 
     function getArticles() {

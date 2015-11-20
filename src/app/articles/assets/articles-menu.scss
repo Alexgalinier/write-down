@@ -1,0 +1,19 @@
+.articles-name {
+  cursor: pointer;
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+.articles-sub-lvl-1 {
+  padding-left: $font-base;
+}
+
+.articles-sub-lvl-2 {
+  padding-left: $font-base * 2;
+}
+
+.articles-sub-lvl-3 {
+  padding-left: $font-base * 3;
+}
