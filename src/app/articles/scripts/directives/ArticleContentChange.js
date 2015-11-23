@@ -9,14 +9,14 @@
         return {
             restrict: 'A',
 
-            link: contentChange
+            link: contentChangeLink
         };
 
         /* ---------------------
          * Public Functions
          * --------------------- */
 
-        function contentChange(scope, elem, attr) {
+        function contentChangeLink(scope, elem, attr) {
             var content = elem.html();
             elem.bind('keyup', function () {
                 if (!scope.vm.articleHasChanged) {
