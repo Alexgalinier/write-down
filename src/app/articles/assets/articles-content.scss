@@ -22,3 +22,15 @@
     background: lightcoral;
   }
 }
+
+.article h2 {
+  font-size: 2em;
+}
+
+.article pre {
+  background: #2B2B2B;
+  color: #A8B7C7;
+  border-left: 4px solid #434E60;
+  padding: 10px;
+  font-family: Consolas, Lucida Console, monospace;
+}

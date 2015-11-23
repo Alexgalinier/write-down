@@ -9,14 +9,14 @@
         return {
             restrict: 'A',
 
-            link: menuIndentClass
+            link: menuIndentLink
         };
 
         /* ---------------------
          * Public Functions
          * --------------------- */
 
-        function menuIndentClass(scope, elem, attr) {
+        function menuIndentLink(scope, elem, attr) {
             var elemClass = '';
 
             if (scope.article.id.split('.').length > 1) {
