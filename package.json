@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "angular": "^1.4.7",
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "^0.2.15",
+    "restify": "~4.0.3",
+    "mongoose": "~4.2.7"
   }
 }
