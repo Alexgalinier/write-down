@@ -1,5 +1,15 @@
 <article class="article">
-    <span class="article-status-light" ng-class="{saved: !vm.articleHasChanged, pending: vm.articleHasChanged}"></span>
-    <h1>{{:: vm.article.name }}</h1>
-    <div class="articles-content" ng-bind-html="vm.content | toTrusted" article-content-change article-medium-editor></div>
+
+    <h1 class="article-title-container">
+        <span class="article-title">
+            {{:: vm.article.name }}
+            <span class="article-status" ng-class="{saved: !vm.articleHasChanged, pending: vm.articleSaving, to-be-saved: vm.articleHasChanged}">
+                <span class="article-satuts-light"></span>
+                <span ng-if=""></span>
+            </span>
+        </span>
+    </h1>
+    <div class="article-content-container">
+        <div class="articles-content" ng-bind-html="vm.content | toTrusted" article-content-change article-medium-editor></div>
+    </div>
 </article>

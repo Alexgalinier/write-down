@@ -2,14 +2,33 @@
   position: relative;
 }
 
+.article-title-container {
+  background: $clr-white;
+  padding: $pdg-big;
+}
+
+.article-title {
+  font-size: $font-big;
+  position: relative;
+}
+
+.article-content-container {
+  border-top: 1px solid $clr-third-sep;
+  padding: $pdg-big;
+}
+
 .articles-content {
+  max-width: $article-max-width;
+  padding: $pdg-base;
   outline: 0;
+  background: $clr-white;
+  border: 1px solid $clr-third-sep;
 }
 
 .article-status-light {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
   width: 10px;
   height: 10px;
   border-radius: 50%;

@@ -23,7 +23,6 @@
           buttons: ['bold', 'italic', 'quote', 'pre']
         }
       });
-      console.log(editor);
     }
   }
 })();

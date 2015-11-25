@@ -4,3 +4,10 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+body {
+  font-size: $font-base;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}

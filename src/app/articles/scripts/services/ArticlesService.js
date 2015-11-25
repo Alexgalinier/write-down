@@ -5,7 +5,7 @@
     .module('wrtd.articles')
     .service('ArticlesService', ArticlesService);
 
-  function ArticlesService($q) {
+  function ArticlesService($q, $timeout) {
     var mockArticles = fillData();
 
     return {
@@ -47,7 +47,9 @@
         }
       }
 
-      deferred.resolve(article);
+      $timeout(function() {
+        deferred.resolve(article);
+      }, 2000);
 
       return deferred.promise;
     }
@@ -76,7 +78,29 @@
         {
           id: '1.1.2',
           name: "Architecture",
-          content: "Article Arch 1.1.2"
+          content: "" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith" +
+          "Article Arch 1.1.2 lqwelqkweklqlweklqwleklqwkel qlwke lkwel kqwlekw ekrjwierhi wrhtiuehrtiuhe rituheirtuhei rhtie hrtieurhtiuehr tiehrt iehrti huertiuh eirth eirth erith"
         },
         {
           id: '2',

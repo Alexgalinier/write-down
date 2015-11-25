@@ -1,8 +1,13 @@
 .articles-name {
+  padding: $pdg-base-tb-small;
   cursor: pointer;
+  font-weight: bold;
+  border-left: 5px solid transparent;
 
   &.active {
-    font-weight: bold;
+    background: $bg-darker;
+    border-color: $clr-main;
+    color: $clr-white;
   }
 }
 

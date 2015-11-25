@@ -1,5 +1,29 @@
 // Font
 $font-base: 16px;
+$font-big: $font-base * 2;
+
+// Colors
+$clr-main: #14A4FA;
+$clr-second: #344052;
+$clr-third: #ECF2F6;
+$clr-third-sep: #DDE3E8;
+$clr-white: white;
+$clr-text-normal: #858997;
+$clr-text-important: black;
+$clr-valid-state: #8DC63B;
+$clr-unvalid-state: #FF847E;
+$clr-disabled-state: $clr-text-normal;
+
+$bg-darker: rgba(0,0,0,.2);
 
 // Padding
-$pdg-base: $font-base / 2;
+$pdg-base: $font-base * 2;
+
+$pdg-small: $font-base * .7;
+$pdg-big: $font-base * 2.5;
+
+$pdg-base-tb-small: $pdg-small $font-base;
+
+// Specific variables
+$article-max-width: $font-base * 55;
+$menu-width: 300px;

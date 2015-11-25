@@ -10,6 +10,7 @@
 
     vm.article = null;
     vm.articleHasChanged = false;
+    vm.articleSaving = false;
     vm.content = '';
 
     init();
@@ -28,9 +29,11 @@
       var timer = $interval(function() {
         if (vm.articleHasChanged) {
           vm.articleHasChanged = false;
+          vm.articleSaving = true;
           vm.article.content = vm.articleNewContent;
 
           ArticlesService.save(vm.article).then(function() {
+            vm.articleSaving = false;
             console.log('saved');
           });
         }

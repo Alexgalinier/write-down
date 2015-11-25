@@ -1,10 +1,24 @@
 .articles-menu-container {
-  float: left;
-  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $menu-width;
+  overflow: auto;
+
+  background: $clr-second;
+  color: $clr-text-normal;
 }
 
 .articles-content-container {
-  margin-left: 220px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: $menu-width;
+  overflow: auto;
+
+  background: $clr-third;
 }
 
 @import "articles-menu";
