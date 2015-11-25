@@ -22,7 +22,8 @@
   "dependencies": {
     "angular": "^1.4.7",
     "angular-ui-router": "^0.2.15",
-    "restify": "~4.0.3",
-    "mongoose": "~4.2.7"
+    "lodash": "^3.10.1",
+    "mongoose": "~4.2.7",
+    "restify": "~4.0.3"
   }
 }

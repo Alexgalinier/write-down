@@ -1,48 +1,33 @@
+// Dependencies
 var restify = require('restify');
 var mongoose = require('mongoose');
+var Routes = require('./routes.js')
 
-// Mongo connection
-mongoose.connect('mongodb://localhost');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (callback) {
-  console.log('connection ok');
-});
+// Core
+var server, db, routes;
 
-var articleSchema = mongoose.Schema({
-  id: String,
-  name: String
-});
+init();
 
-var Article = mongoose.model('Article', articleSchema);
-
-var anArticle = new Article({id: '1', name: 'AngularJs'});
-anArticle.save();
-
-Article.find({}).then(function(res) {
-  console.log(res);
-  return Article.remove({id: '1'});
-}).then(function() {
-  Article.find(function(err, res) {
-    if (err)
-      return;
-
-    console.log(res);
+// Privates
+function init() {
+  // Init mongodb connection
+  mongoose.connect('mongodb://localhost');
+  db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function (callback) {
+    console.log('MongoDB connection : ok');
   });
-});
 
-// Server core
-var server = restify.createServer();
-server.get('/rest/articles', function(req, res, next) {
-  res.send([
-    {
-      id: 1,
-      name: 'Angular Best practices'
-    }
-  ]);
-  next();
-});
+  // Init server
+  server = restify.createServer();
+  server.use(restify.acceptParser(server.acceptable));
+  server.use(restify.queryParser());
+  server.use(restify.bodyParser());
+  server.listen(8080, function() {
+    console.log('Server %s started at %s : ok', server.name, server.url);
+  });
 
-/*server.listen(8080, function() {
-  console.log('%s listening at %s', server.name, server.url);
-});*/
+  // Init routes
+  routes = new Routes(server);
+  routes.init();
+}
