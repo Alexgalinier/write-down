@@ -1,10 +1,10 @@
 // Dependencies
 var restify = require('restify');
 var mongoose = require('mongoose');
-var Routes = require('./routes.js')
+var ArticlesModule = require('./articles/ArticlesModule.js')
 
 // Core
-var server, db, routes;
+var server, db;
 
 init();
 
@@ -27,7 +27,6 @@ function init() {
     console.log('Server %s started at %s : ok', server.name, server.url);
   });
 
-  // Init routes
-  routes = new Routes(server);
-  routes.init();
+  // Init modules
+  ArticlesModule(server);
 }

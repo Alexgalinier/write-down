@@ -3,7 +3,7 @@
     <h1 class="article-title-container">
         <span class="article-title">
             {{:: vm.article.name }}
-            <span class="article-status" ng-class="{saved: !vm.articleHasChanged, pending: vm.articleSaving, to-be-saved: vm.articleHasChanged}">
+            <span class="article-status" ng-class="{saved: !vm.articleHasChanged, pending: vm.articleSaving, 'to-be-saved': vm.articleHasChanged}">
                 <span class="article-satuts-light"></span>
                 <span ng-if=""></span>
             </span>
