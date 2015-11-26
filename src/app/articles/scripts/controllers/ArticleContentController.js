@@ -37,7 +37,7 @@
             console.log('saved');
           });
         }
-      }, 1000);
+      }, 2000);
 
       $scope.$on("$destroy", function() {
         if (timer) $interval.cancel(timer);

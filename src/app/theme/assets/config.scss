@@ -1,6 +1,8 @@
 // Font
-$font-base: 16px;
+$font-initial: 16px;
+$font-base: 1rem;
 $font-big: $font-base * 2;
+$font-small: $font-base / 1.5;
 
 // Colors
 $clr-main: #14A4FA;
