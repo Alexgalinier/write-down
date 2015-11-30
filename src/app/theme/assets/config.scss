@@ -1,3 +1,5 @@
+@import "colors";
+
 // Font
 $font-initial: 16px;
 $font-base: 1rem;
@@ -5,16 +7,17 @@ $font-big: $font-base * 2;
 $font-small: $font-base / 1.5;
 
 // Colors
-$clr-main: #14A4FA;
-$clr-second: #344052;
-$clr-third: #ECF2F6;
-$clr-third-sep: #DDE3E8;
+$clr-main: $blue;
+$clr-second: $blue-grey-800;
+$clr-third: $blue-grey-50;
+$clr-third-sep: $blue-grey-100;
 $clr-white: white;
-$clr-text-normal: #858997;
+$clr-text: $grey-800;
 $clr-text-important: black;
-$clr-valid-state: #8DC63B;
-$clr-unvalid-state: #FF847E;
-$clr-disabled-state: $clr-text-normal;
+$clr-valid-state: $green-200;
+$clr-unvalid-state: $red-200;
+$clr-button-text: $grey-400;
+$clr-button-border: $grey-300;
 
 $bg-darker: rgba(0,0,0,.2);
 

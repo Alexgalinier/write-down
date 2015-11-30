@@ -14,6 +14,7 @@
 
 .article-title {
   font-size: $font-big;
+  color: $clr-text-important;
 }
 
 .article-status {
@@ -21,12 +22,14 @@
   top: $pdg-big;
   right: $pdg-big;
   line-height: 28px;
-  border: 2px solid $clr-third-sep;
+  border: 2px solid $clr-button-border;
+  border-radius: 50px;
   font-size: $font-small;
   padding-left: 2em;
   padding-right: $pdg-small;
   text-transform: uppercase;
   font-weight: bold;
+  color: $clr-button-text;
 
   &:before {
     content: '';
@@ -39,15 +42,15 @@
   }
 
   &.to-be-saved:before {
-    background: lightcoral;
+    background: $clr-unvalid-state;
   }
 
   &.saved:before {
-    background: lightgreen;
+    background: $clr-valid-state;
   }
 
   &.pending:before {
-    background: $clr-third;
+    background: $clr-button-border;
   }
 }
 

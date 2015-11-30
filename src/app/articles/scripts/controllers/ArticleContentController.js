@@ -28,16 +28,18 @@
     function init() {
       var timer = $interval(function() {
         if (vm.articleHasChanged) {
-          vm.articleHasChanged = false;
-          vm.articleSaving = true;
-          vm.article.content = vm.articleNewContent;
+          if (((new Date).getTime() - vm.articleHasChanged.getTime()) > 2000) {
+            vm.articleHasChanged = false;
+            vm.articleSaving = true;
+            vm.article.content = vm.articleNewContent;
 
-          ArticlesService.save(vm.article).then(function() {
-            vm.articleSaving = false;
-            console.log('saved');
-          });
+            ArticlesService.save(vm.article).then(function() {
+              vm.articleSaving = false;
+              console.log('saved');
+            });
+          }
         }
-      }, 2000);
+      }, 1000);
 
       $scope.$on("$destroy", function() {
         if (timer) $interval.cancel(timer);

@@ -19,8 +19,8 @@
         function contentChangeLink(scope, elem, attr) {
             var content = elem.html();
             elem.bind('keyup', function () {
-                if (!scope.vm.articleHasChanged) {
-                    scope.vm.articleHasChanged = (content != elem.html());
+                if (content != elem.html()) {
+                    scope.vm.articleHasChanged = new Date();
                     scope.$apply();
                 }
 
