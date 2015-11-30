@@ -63,14 +63,38 @@
   margin: 0 auto;
 }
 
-.article h2 {
-  font-size: 2em;
-}
+.article {
+  h2 {
+    font-size: 2em;
+  }
 
-.article pre {
-  background: #2B2B2B;
-  color: #A8B7C7;
-  border-left: 4px solid #434E60;
-  padding: 10px;
-  font-family: Consolas, Lucida Console, monospace;
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-weight: bold;
+  }
+
+  p {
+    line-height: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  blockquote {
+    border-left: 4px solid $blue-grey-400;
+    padding: 1rem 2rem;
+    display: block;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+  pre {
+    background: $blue-grey-800;
+    color: rgba(255,255,255,.5);
+    border-left: 4px solid $blue-grey-400;
+    padding: 1rem 2rem;
+    font-family: Consolas, Lucida Console, monospace;
+    margin: 1rem 0;
+  }
 }

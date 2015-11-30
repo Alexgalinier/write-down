@@ -35,7 +35,6 @@
 
             ArticlesService.save(vm.article).then(function() {
               vm.articleSaving = false;
-              console.log('saved');
             });
           }
         }

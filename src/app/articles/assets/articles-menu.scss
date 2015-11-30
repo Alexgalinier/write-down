@@ -13,13 +13,15 @@
 }
 
 .articles-sub-lvl-1 {
-  padding-left: $font-base;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  padding-left: $font-base * 2.5;
+  font-size: .8rem;
 }
 
 .articles-sub-lvl-2 {
-  padding-left: $font-base * 2;
-}
-
-.articles-sub-lvl-3 {
-  padding-left: $font-base * 3;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  padding-left: $font-base * 4;
+  font-size: .8rem;
 }

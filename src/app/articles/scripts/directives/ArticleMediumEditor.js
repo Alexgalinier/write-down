@@ -23,6 +23,12 @@
           buttons: ['bold', 'italic', 'quote', 'pre']
         }
       });
+
+      editor.subscribe('editableInput', function (event, editable) {
+        scope.vm.articleHasChanged = new Date();
+        scope.$apply();
+        scope.vm.articleNewContent = editable.innerHTML;
+      });
     }
   }
 })();
