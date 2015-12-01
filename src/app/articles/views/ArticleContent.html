@@ -3,7 +3,7 @@
         <div class="article-title">{{:: vm.article.name }}</div>
         <div class="article-status pending" ng-if="vm.articleSaving">Saving...</div>
         <div class="article-status saved" ng-if="!vm.articleHasChanged && !vm.articleSaving">Saved</div>
-        <div class="article-status to-be-saved" ng-if="vm.articleHasChanged && !vm.articleSaving">To be saved</div>
+        <div class="article-status to-be-saved" ng-if="vm.articleHasChanged && !vm.articleSaving">Not saved</div>
     </h1>
     <div class="article-content-container">
         <div class="articles-content" ng-bind-html="vm.content | toTrusted" article-medium-editor></div>

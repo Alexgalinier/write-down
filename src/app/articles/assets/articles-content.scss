@@ -1,3 +1,9 @@
+// Variables
+$article-content-btn-border: 2px solid $clr-button-border;
+$article-content-btn-border-radius: 50px;
+$article-content-btn-status-size: 10px;
+
+// Core
 .article {
   position: relative;
 }
@@ -21,12 +27,12 @@
   position: absolute;
   top: $pdg-big;
   right: $pdg-big;
-  line-height: 28px;
-  border: 2px solid $clr-button-border;
-  border-radius: 50px;
   font-size: $font-small;
-  padding-left: 2em;
+  padding-left: 1.5rem;
   padding-right: $pdg-small;
+  line-height: calc(#{$font-big} - 4px);
+  border: $article-content-btn-border;
+  border-radius: $article-content-btn-border-radius;
   text-transform: uppercase;
   font-weight: bold;
   color: $clr-button-text;
@@ -34,10 +40,10 @@
   &:before {
     content: '';
     position: absolute;
-    top: 9px;
-    left: 7px;
-    width: 10px;
-    height: 10px;
+    top: calc((#{$font-big} - #{$article-content-btn-status-size} - 4px) / 2);
+    left: calc((#{$font-big} - #{$article-content-btn-status-size} - 4px) / 2);
+    width: $article-content-btn-status-size;
+    height: $article-content-btn-status-size;
     border-radius: 50%;
   }
 
@@ -65,7 +71,7 @@
 
 .article {
   h2 {
-    font-size: 2em;
+    font-size: $font-big;
   }
 
   i {
@@ -77,24 +83,25 @@
   }
 
   p {
-    line-height: 1.4rem;
-    margin: 1rem 0;
+    line-height: $line-height-text;
+    margin: $mrg-base 0;
   }
 
   blockquote {
-    border-left: 4px solid $blue-grey-400;
+    background: $clr-third;
+    border-left: $border-highlight solid $blue-grey-400;
     padding: 1rem 2rem;
     display: block;
-    margin: 1rem 0;
+    margin: $mrg-base 0;
     font-style: italic;
   }
 
   pre {
     background: $blue-grey-800;
     color: rgba(255,255,255,.5);
-    border-left: 4px solid $blue-grey-400;
+    border-left: $border-highlight solid $blue-grey-400;
     padding: 1rem 2rem;
     font-family: Consolas, Lucida Console, monospace;
-    margin: 1rem 0;
+    margin: $mrg-base 0;
   }
 }

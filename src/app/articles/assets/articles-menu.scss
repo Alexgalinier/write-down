@@ -1,8 +1,13 @@
+// Variables
+$pdg-sub-articles: .4rem;
+$font-size-sub-articles: .8rem;
+
+// Core
 .articles-name {
   padding: $pdg-base-tb-small;
   cursor: pointer;
   font-weight: bold;
-  border-left: 5px solid transparent;
+  border-left: $border-highlight solid transparent;
   color: rgba(255,255,255,.5);
 
   &.active {
@@ -13,15 +18,15 @@
 }
 
 .articles-sub-lvl-1 {
-  padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding-top: $pdg-sub-articles;
+  padding-bottom: $pdg-sub-articles;
   padding-left: $font-base * 2.5;
-  font-size: .8rem;
+  font-size: $font-size-sub-articles;
 }
 
 .articles-sub-lvl-2 {
-  padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding-top: $pdg-sub-articles;
+  padding-bottom: $pdg-sub-articles;
   padding-left: $font-base * 4;
-  font-size: .8rem;
+  font-size: $font-size-sub-articles;
 }

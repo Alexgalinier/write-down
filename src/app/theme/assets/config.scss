@@ -6,6 +6,10 @@ $font-base: 1rem;
 $font-big: $font-base * 2;
 $font-small: $font-base / 1.5;
 
+// Line-height
+$line-height-base: $font-base;
+$line-height-text: $font-base * 1.4;
+
 // Colors
 $clr-main: $blue;
 $clr-second: $blue-grey-800;
@@ -29,6 +33,10 @@ $pdg-big: $font-base * 2.5;
 
 $pdg-base-tb-small: $pdg-small $font-base;
 
+// Margin
+$mrg-base: $font-base;
+
 // Specific variables
 $article-max-width: $font-base * 55;
-$menu-width: 300px;
+$menu-width: $font-base * 18;
+$border-highlight: 5px;

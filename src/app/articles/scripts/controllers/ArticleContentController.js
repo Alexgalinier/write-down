@@ -5,7 +5,7 @@
     .module('wrtd.articles')
     .controller('ArticleContentController', ArticleContentController);
 
-  function ArticleContentController($scope, $stateParams, $interval, ArticlesService) {
+  function ArticleContentController($scope, $stateParams, $interval, ArticlesService, ArticlesConfig) {
     var vm = this;
 
     vm.article = null;
@@ -28,7 +28,7 @@
     function init() {
       var timer = $interval(function() {
         if (vm.articleHasChanged) {
-          if (((new Date).getTime() - vm.articleHasChanged.getTime()) > 2000) {
+          if (((new Date).getTime() - vm.articleHasChanged.getTime()) > ArticlesConfig.saveAfterInterval) {
             vm.articleHasChanged = false;
             vm.articleSaving = true;
             vm.article.content = vm.articleNewContent;
@@ -38,7 +38,7 @@
             });
           }
         }
-      }, 1000);
+      }, ArticlesConfig.hasChangedTimer);
 
       $scope.$on("$destroy", function() {
         if (timer) $interval.cancel(timer);
