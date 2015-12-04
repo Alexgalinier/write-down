@@ -12,9 +12,21 @@ ArticlesService.getAll = function(req, res, next) {
     });
 }
 
+ArticlesService.get = function(req, res, next) {
+    ArticleModel.find({'_id':req.params.id}).then(
+        function(result) {
+            ResponseHandler.send(result[0], res, next);
+        },
+        function() {
+            ResponseHandler.send({}, res, next);
+        });
+}
+
 ArticlesService.add = function(req, res, next) {
     var newArticle = new ArticleModel({
-        name: req.params.name
+        name: req.params.name,
+        level: req.params.level,
+        content: req.params.content
     });
 
     newArticle.save();
@@ -23,9 +35,19 @@ ArticlesService.add = function(req, res, next) {
 }
 
 ArticlesService.update = function(req, res, next) {
-    ArticleModel.update({'_id': req.params.id}, {'name': req.params.name}, function(err) {
-        ResponseHandler.sendValid(res, next);
-    });
+    ArticleModel.update(
+        {
+            '_id': req.params.id
+        },
+        {
+            name: req.params.name,
+            level: req.params.level,
+            content: req.params.content,
+        },
+        function(err) {
+            ResponseHandler.sendValid(res, next);
+        }
+    );
 }
 
 ArticlesService.delete = function(req, res, next) {

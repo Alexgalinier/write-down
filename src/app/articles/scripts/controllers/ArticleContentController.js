@@ -11,6 +11,7 @@
     vm.article = null;
     vm.articleHasChanged = false;
     vm.articleSaving = false;
+    vm.title = '';
     vm.content = '';
 
     init();
@@ -31,6 +32,7 @@
           if (((new Date).getTime() - vm.articleHasChanged.getTime()) > ArticlesConfig.saveAfterInterval) {
             vm.articleHasChanged = false;
             vm.articleSaving = true;
+            vm.article.name = vm.articleNewTitle;
             vm.article.content = vm.articleNewContent;
 
             ArticlesService.save(vm.article).then(function() {
@@ -47,10 +49,17 @@
       getArticle();
     }
 
+    function onTitleChange(newTitle) {
+      console.log('title changed to', newTitle);
+    }
+
     function getArticle() {
       return ArticlesService.getById($stateParams.id).then(function(article) {
         vm.article = article;
+        vm.title = vm.article.name;
         vm.content= vm.article.content;
+        vm.articleNewTitle= vm.title;
+        vm.articleNewContent= vm.content;
         return vm.article;
       });
     }

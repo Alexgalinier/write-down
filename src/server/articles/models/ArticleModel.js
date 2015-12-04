@@ -3,7 +3,9 @@ var mongoose = require('mongoose');
 
 // Core
 var ArticleSchema = mongoose.Schema({
-    name: String
+    name: String,
+    level: Number,
+    content: String
 });
 
 var ArticleModel = mongoose.model('Article', ArticleSchema);

@@ -19,8 +19,8 @@
         function menuIndentLink(scope, elem, attr) {
             var elemClass = '';
 
-            if (scope.article.id.split('.').length > 1) {
-                elemClass = 'articles-sub-lvl-' + (scope.article.id.split('.').length - 1);
+            if (scope.article.level > 1) {
+                elemClass = 'articles-sub-lvl-' + scope.article.level;
             }
 
             elem.addClass(elemClass);
