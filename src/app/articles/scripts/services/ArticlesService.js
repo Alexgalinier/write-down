@@ -9,6 +9,7 @@
     return {
       getAll: getAll,
       getById: getById,
+      add: add,
       save: save
     };
 
@@ -29,6 +30,16 @@
       return $http({
         method: 'GET',
         url: 'http://localhost:8080/rest/articles/'+id
+      }).then(function(resp) {
+        return resp.data;
+      });
+    }
+
+    function add(article) {
+      return $http({
+        method: 'PUT',
+        data: article,
+        url: 'http://localhost:8080/rest/articles'
       }).then(function(resp) {
         return resp.data;
       });

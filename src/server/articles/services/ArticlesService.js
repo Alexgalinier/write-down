@@ -31,7 +31,7 @@ ArticlesService.add = function(req, res, next) {
 
     newArticle.save();
 
-    ResponseHandler.sendValid(res, next);
+    ResponseHandler.send(newArticle, res, next);
 }
 
 ArticlesService.update = function(req, res, next) {

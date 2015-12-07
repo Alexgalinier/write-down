@@ -3,6 +3,18 @@ $pdg-sub-articles: .4rem;
 $font-size-sub-articles: .8rem;
 
 // Core
+.article-menu-button {
+  padding: $pdg-base-tb-small;
+  background: none;
+  color: rgba(255,255,255,.5);
+  border: 0;
+  font-size: $font-base;
+  display: block;
+  //text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #2A3443;
+}
+
 .articles-name {
   padding: $pdg-base-tb-small;
   cursor: pointer;
