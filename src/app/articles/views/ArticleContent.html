@@ -1,10 +1,13 @@
 <article class="article">
-    <h1 class="article-title-container">
+    <div class="article-title-container">
         <article-title text="vm.title" on-change="vm.onTitleChange(newTitle)"></article-title>
-        <div class="article-status pending" ng-if="vm.articleSaving">Saving...</div>
-        <div class="article-status saved" ng-if="!vm.articleHasChanged && !vm.articleSaving">Saved</div>
-        <div class="article-status to-be-saved" ng-if="vm.articleHasChanged && !vm.articleSaving">Not saved</div>
-    </h1>
+        <div class="article-actions">
+            <span class="article-action with-status pending" ng-if="vm.articleSaving">Saving...</span>
+            <span class="article-action with-status saved" ng-if="!vm.articleHasChanged && !vm.articleSaving">Saved</span>
+            <span class="article-action with-status to-be-saved" ng-if="vm.articleHasChanged && !vm.articleSaving">Not saved</span>
+            <span class="article-action" article-delete-tooltip><i class="fa fa-trash"></i></span>
+        </div>
+    </div>
     <div class="article-content-container">
         <div class="articles-content" ng-bind-html="vm.content | toTrusted" article-medium-editor></div>
     </div>

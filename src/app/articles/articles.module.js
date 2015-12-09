@@ -2,6 +2,8 @@
   'use strict';
 
   angular
-    .module('wrtd.articles', []);
+    .module('wrtd.articles', [
+        'wrtd.commom'
+      ]);
 
 })();

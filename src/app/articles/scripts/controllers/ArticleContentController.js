@@ -5,7 +5,7 @@
     .module('wrtd.articles')
     .controller('ArticleContentController', ArticleContentController);
 
-  function ArticleContentController($scope, $stateParams, $interval, ArticlesService, ArticlesConfig) {
+  function ArticleContentController($scope, $stateParams, $interval, $state, ArticlesService, ArticlesConfig) {
     var vm = this;
 
     vm.article = null;
@@ -14,13 +14,19 @@
     vm.title = '';
     vm.content = '';
 
+    vm.deleteArticle = deleteArticle;
+
     init();
 
     /* ---------------------
      * Public Functions
      * --------------------- */
 
-    // ...
+    function deleteArticle() {
+      ArticlesService.delete(vm.article).then(function() {
+        $state.go('articles.list', {});
+      });
+    }
 
     /* ---------------------
      * Privates Functions
@@ -47,10 +53,6 @@
       });
 
       getArticle();
-    }
-
-    function onTitleChange(newTitle) {
-      console.log('title changed to', newTitle);
     }
 
     function getArticle() {

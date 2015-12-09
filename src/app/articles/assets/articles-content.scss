@@ -24,19 +24,53 @@ $article-content-btn-status-size: 10px;
   outline: 0;
 }
 
-.article-status {
+.article-actions {
   position: absolute;
   top: $pdg-big;
   right: $pdg-big;
+}
+
+.article-action {
+  position: relative;
+  display: inline-block;
   font-size: $font-small;
-  padding-left: 1.5rem;
+  padding-left: $pdg-small;
   padding-right: $pdg-small;
+  margin-left: .5rem;
   line-height: calc(#{$font-big} - 4px);
   border: $article-content-btn-border;
   border-radius: $article-content-btn-border-radius;
   text-transform: uppercase;
   font-weight: bold;
   color: $clr-button-text;
+  cursor: pointer;
+
+  &:hover, &.hover {
+    background: $clr-main;
+    border-color: $clr-main;
+    color: white;
+  }
+
+  &:active {
+    background: $blue-700;
+    border-color: $blue-700;
+    color: white;
+  }
+}
+
+.article-action .fa {
+  font-size: $font-base;
+}
+
+.with-status {
+  padding-left: 1.5rem;
+  cursor: default;
+
+  &:hover, &:active {
+    background: none;
+    border: $article-content-btn-border;
+    color: $clr-button-text;
+  }
 
   &:before {
     content: '';
@@ -70,7 +104,7 @@ $article-content-btn-status-size: 10px;
   margin: 0 auto;
 }
 
-.article {
+.article-content-container {
   h2 {
     font-size: $font-big;
   }

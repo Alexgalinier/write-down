@@ -3,22 +3,44 @@ $pdg-sub-articles: .4rem;
 $font-size-sub-articles: .8rem;
 
 // Core
-.article-menu-button {
+.article-menu-button-container {
   padding: $pdg-base-tb-small;
-  background: none;
-  color: rgba(255,255,255,.5);
+}
+
+.article-menu-button {
+  padding: $pdg-small;
+  background: $blue-grey-600;
+  color: white;
   border: 0;
   font-size: $font-base;
+  font-weight: bold;
   display: block;
-  //text-align: center;
+  text-align: center;
   cursor: pointer;
-  border-bottom: 1px solid #2A3443;
+  border-radius: 3px;
+
+  &:hover {
+    background: $blue-grey-500;
+  }
+
+  &:active {
+    background: $blue-grey-400;
+  }
+}
+
+.article-menu-title {
+  padding: $pdg-base-tb-small;
+  border-left: $border-highlight solid transparent;
+  color: $blue-grey-600;
+  font-weight: bold;
+  font-size: .9rem;
+  line-height: 1rem;
 }
 
 .articles-name {
   padding: $pdg-base-tb-small;
   cursor: pointer;
-  font-weight: bold;
+  //font-weight: bold;
   border-left: $border-highlight solid transparent;
   color: rgba(255,255,255,.5);
 
@@ -26,6 +48,7 @@ $font-size-sub-articles: .8rem;
     background: $bg-darker;
     border-color: $clr-main;
     color: $clr-white;
+    font-weight: bold;
   }
 }
 

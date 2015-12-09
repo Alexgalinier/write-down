@@ -1,4 +1,7 @@
-<a class="article-menu-button" ng-click="vm.createArticle()">+ Create article</a>
+<div class="article-menu-button-container">
+    <a type="button" class="article-menu-button" ng-click="vm.createArticle()">Create article</a>
+</div>
+<h3 class="article-menu-title">Articles</h3>
 <ul>
     <li ng-repeat="article in vm.articles"
         class="articles-name"

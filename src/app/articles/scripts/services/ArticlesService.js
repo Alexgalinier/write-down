@@ -5,12 +5,13 @@
     .module('wrtd.articles')
     .service('ArticlesService', ArticlesService);
 
-  function ArticlesService($http) {
+  function ArticlesService($http, PubSubService) {
     return {
       getAll: getAll,
       getById: getById,
       add: add,
-      save: save
+      save: save,
+      delete: deleteArticle
     };
 
     /* ---------------------
@@ -41,6 +42,7 @@
         data: article,
         url: 'http://localhost:8080/rest/articles'
       }).then(function(resp) {
+        PubSubService.publish('articles.createdDeleted', resp.data);
         return resp.data;
       });
     }
@@ -51,7 +53,17 @@
         data: article,
         url: 'http://localhost:8080/rest/articles/'+article._id
       }).then(function(resp) {
+        PubSubService.publish('articles.updated', resp.data);
         return resp.data;
+      });
+    }
+
+    function deleteArticle(article) {
+      return $http({
+        method: 'DELETE',
+        url: 'http://localhost:8080/rest/articles/'+article._id
+      }).then(function(resp) {
+        PubSubService.publish('articles.createdDeleted', resp.data);
       });
     }
 

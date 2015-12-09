@@ -8,6 +8,7 @@ config.paths.base         = __dirname;
 config.paths.nodeModules  = path.join(config.paths.base, 'node_modules');
 config.paths.src          = path.join(config.paths.base, 'src');
 config.paths.app          = path.join(config.paths.src, 'app');
+config.paths.lib          = path.join(config.paths.src, 'lib');
 config.paths.dist         = path.join(config.paths.base, 'dist');
 
 // TASKS
@@ -23,6 +24,8 @@ config.tasks.html = {
 config.tasks.package = {
   src: [
     path.join(config.paths.dist, 'templates.js'),
+    path.join(config.paths.app, 'common', 'common.module.js'),
+    path.join(config.paths.app, 'common', '**', '*.js'),
     path.join(config.paths.app, 'articles', 'articles.module.js'),
     path.join(config.paths.app, 'articles', '**', '*.js'),
     path.join(config.paths.app, 'app.module.js'),
@@ -37,6 +40,7 @@ config.tasks.packageVendors = {
     // Deps files
     path.join(config.paths.nodeModules, 'angular', 'angular.min.js'),
     path.join(config.paths.nodeModules, 'angular-ui-router', 'release', 'angular-ui-router.min.js'),
+    path.join(config.paths.lib, 'tooltip', 'tooltip.min.js'),
   ],
   concatOutputFile: 'vendors.js',
   dst: config.paths.dist
