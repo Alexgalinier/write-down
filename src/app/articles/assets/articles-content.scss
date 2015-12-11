@@ -31,19 +31,19 @@ $article-content-btn-status-size: 10px;
 }
 
 .article-action {
+  @extend .button;
+
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
   display: inline-block;
   font-size: $font-small;
-  padding-left: $pdg-small;
-  padding-right: $pdg-small;
   margin-left: .5rem;
   line-height: calc(#{$font-big} - 4px);
   border: $article-content-btn-border;
   border-radius: $article-content-btn-border-radius;
   text-transform: uppercase;
-  font-weight: bold;
   color: $clr-button-text;
-  cursor: pointer;
 
   &:hover, &.hover {
     background: $clr-main;

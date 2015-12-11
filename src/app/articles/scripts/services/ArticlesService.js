@@ -38,7 +38,7 @@
 
     function add(article) {
       return $http({
-        method: 'PUT',
+        method: 'POST',
         data: article,
         url: 'http://localhost:8080/rest/articles'
       }).then(function(resp) {
@@ -49,7 +49,7 @@
 
     function save(article) {
       return $http({
-        method: 'POST',
+        method: 'PUT',
         data: article,
         url: 'http://localhost:8080/rest/articles/'+article._id
       }).then(function(resp) {

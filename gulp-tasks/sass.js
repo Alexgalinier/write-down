@@ -5,7 +5,7 @@ module.exports = function(gulp, options) {
   return function () {
     return gulp.src(options.src)
       .pipe(plumber())
-      .pipe(sass())
+      .pipe(sass(options.compilerOptions))
       .pipe(gulp.dest(options.dst));
   }
 };

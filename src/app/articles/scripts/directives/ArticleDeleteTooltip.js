@@ -21,27 +21,30 @@
 
             elem.on('click', function() {
                 if (tip) {
-                    elem.removeClass('hover');
-                    tip.hide();
-                    tip = null;
+                    cancelTip();
                     return;
                 }
 
                 elem.addClass('hover');
                 tip = new Tooltip(getTooltipContent(
                     function() {
-                        elem.removeClass('hover');
-                        tip.hide();
+                        cancelTip();
                         scope.vm.deleteArticle();
                     },
                     function() {
-                        elem.removeClass('hover');
+                        cancelTip();
                         tip.hide();
                     }))
                     .position(elem[0])
                     .show()
                     .place('bottom-left');
             });
+
+            function cancelTip() {
+                elem.removeClass('hover');
+                tip.hide();
+                tip = null;
+            }
         }
 
         /* ---------------------

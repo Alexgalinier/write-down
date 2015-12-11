@@ -1,6 +1,6 @@
 // Variables
-$pdg-sub-articles: .4rem;
-$font-size-sub-articles: .8rem;
+$sub-articles-pdg-base: .4rem;
+$sub-articles-font-base: .8rem;
 
 // Core
 .article-menu-button-container {
@@ -8,15 +8,13 @@ $font-size-sub-articles: .8rem;
 }
 
 .article-menu-button {
-  padding: $pdg-small;
+  @extend .button;
+
+  display: block;
   background: $blue-grey-600;
   color: white;
   border: 0;
   font-size: $font-base;
-  font-weight: bold;
-  display: block;
-  text-align: center;
-  cursor: pointer;
   border-radius: 3px;
 
   &:hover {
@@ -38,14 +36,14 @@ $font-size-sub-articles: .8rem;
 }
 
 .articles-name {
+  position: relative;
   padding: $pdg-base-tb-small;
   cursor: pointer;
-  //font-weight: bold;
   border-left: $border-highlight solid transparent;
   color: rgba(255,255,255,.5);
 
   &.active {
-    background: $bg-darker;
+    background: $blue-grey-900;
     border-color: $clr-main;
     color: $clr-white;
     font-weight: bold;
@@ -53,15 +51,38 @@ $font-size-sub-articles: .8rem;
 }
 
 .articles-sub-lvl-1 {
-  padding-top: $pdg-sub-articles;
-  padding-bottom: $pdg-sub-articles;
+  padding-top: $sub-articles-pdg-base;
+  padding-bottom: $sub-articles-pdg-base;
   padding-left: $font-base * 2.5;
-  font-size: $font-size-sub-articles;
+  font-size: $sub-articles-font-base;
 }
 
 .articles-sub-lvl-2 {
-  padding-top: $pdg-sub-articles;
-  padding-bottom: $pdg-sub-articles;
+  padding-top: $sub-articles-pdg-base;
+  padding-bottom: $sub-articles-pdg-base;
   padding-left: $font-base * 4;
-  font-size: $font-size-sub-articles;
+  font-size: $sub-articles-font-base;
+}
+
+// Drag styles
+.grabme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .8rem;
+  line-height: 1rem;
+  padding: $pdg-base-tb-small;
+  cursor: move;
+  display: none;
+}
+
+.articles-name:hover .grabme {
+  display: block;
+}
+
+.article-name-ghost {
+  background: $blue-grey-900 !important;
+  color: $blue-grey-900 !important;
+  border: none !important;
+  margin: 0 10px;
 }

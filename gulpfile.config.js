@@ -60,6 +60,9 @@ config.tasks.packageHtml = {
 // Sass
 config.tasks.sass = {
   src: path.join(config.paths.app, 'app.scss'),
+  conpilerOptions: {
+    includePaths: [config.paths.nodeModules]
+  },
   dst: config.paths.dist
 };
 
